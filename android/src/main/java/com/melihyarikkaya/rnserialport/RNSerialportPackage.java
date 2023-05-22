@@ -1,5 +1,5 @@
 
-package com.melihyarikkaya.rnserialport;
+package com.iqbuild.rnserialport;
 
 import java.util.Arrays;
 import java.util.Collections;
