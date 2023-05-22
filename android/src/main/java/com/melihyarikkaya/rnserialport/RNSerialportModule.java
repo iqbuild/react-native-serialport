@@ -2,6 +2,8 @@ package com.melihyarikkaya.rnserialport;
 
 import android.app.PendingIntent;
 
+import android.os.Build;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -562,9 +564,9 @@ public class RNSerialportModule extends ReactContextBaseJavaModule {
       return;
     PendingIntent mPendingIntent = null;
     if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
-      mPendingIntent = PendingIntent.getBroadcast(mReactContext, 0, new Intent(ACTION_USB_PERMISSION), PendingIntent.FLAG_MUTABLE);
+      mPendingIntent = PendingIntent.getBroadcast(reactContext, 0, new Intent(ACTION_USB_PERMISSION), PendingIntent.FLAG_MUTABLE);
     } else {
-      mPendingIntent = PendingIntent.getBroadcast(mReactContext, 0 , new Intent(ACTION_USB_PERMISSION), 0);
+      mPendingIntent = PendingIntent.getBroadcast(reactContext, 0 , new Intent(ACTION_USB_PERMISSION), 0);
     }
     usbManager.requestPermission(device, mPendingIntent);
   }
